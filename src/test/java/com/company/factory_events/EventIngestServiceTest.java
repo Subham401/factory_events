@@ -67,12 +67,13 @@ class EventIngestServiceTest {
     }
 
     @Test
-    void olderEventIsIgnored() {
+    void olderEventIsIgnored() throws InterruptedException {
 
         EventRequestDto first = validEvent("E-3");
         ingestService.ingestBatch(List.of(first));
 
         EventRequestDto older = validEvent("E-3");
+        older.setReceivedTime(Instant.now().minusSeconds(70));
         older.setDefectCount(10);
 
         ingestService.ingestBatch(List.of(older));

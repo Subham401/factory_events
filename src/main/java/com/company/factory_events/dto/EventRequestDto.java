@@ -9,7 +9,17 @@ public class EventRequestDto {
     private String machineId;
     private Instant eventTime;
     private long durationMs;
+
+    public Instant getReceivedTime() {
+        return receivedTime;
+    }
+
+    public void setReceivedTime(Instant receivedTime) {
+        this.receivedTime = receivedTime;
+    }
+
     private int defectCount;
+    private Instant receivedTime;
 
     private String factoryId;
     private String lineId;

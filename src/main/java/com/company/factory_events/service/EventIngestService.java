@@ -54,7 +54,10 @@ public class EventIngestService {
 
         validate(dto);
 
-        Instant receivedTime = Instant.now();
+        Instant receivedTime = dto.getReceivedTime() != null
+                ? dto.getReceivedTime()
+                : Instant.now();
+
         String payloadHash = computePayloadHash(dto);
 
         return eventRepository.findById(dto.getEventId())
