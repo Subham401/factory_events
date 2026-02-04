@@ -186,10 +186,6 @@ class EventIngestServiceTest {
         assertEquals(1, stats.getEventsCount());
     }
 
-    @Test
-    @Transactional
-    @Rollback
-    void contextLoads() {
-    }
+
 
 }
