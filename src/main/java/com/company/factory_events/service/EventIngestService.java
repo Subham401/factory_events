@@ -48,6 +48,7 @@ public class EventIngestService {
         return response;
     }
 
+    @Transactional
     protected IngestResult ingestSingle(EventRequestDto dto) {
 
         validate(dto);
