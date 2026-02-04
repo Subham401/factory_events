@@ -116,31 +116,7 @@ class EventIngestServiceTest {
         assertEquals(0, eventRepository.count());
     }
 
-//    @Test
-//    @Transactional
-//    @Rollback
-//    void concurrentIngestionDoesNotCorruptData() throws Exception {
-//
-//        int threads = 10;
-//        ExecutorService executor = Executors.newFixedThreadPool(threads);
-//
-//        Callable<Void> task = () -> {
-//            ingestService.ingestBatch(
-//                    List.of(validEvent("E-CONCURRENT"))
-//            );
-//            return null;
-//        };
-//
-//        List<Callable<Void>> tasks = List.of(
-//                task, task, task, task, task,
-//                task, task, task, task, task
-//        );
-//
-//        executor.invokeAll(tasks);
-//        executor.shutdown();
-//
-//        assertEquals(1, eventRepository.count());
-//    }
+
 
     @Test
     @Transactional
