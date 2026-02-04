@@ -10,6 +10,12 @@ public class EventRequestDto {
     private Instant eventTime;
     private long durationMs;
 
+    private int defectCount;
+    private Instant receivedTime;
+
+    private String factoryId;
+    private String lineId;
+
     public Instant getReceivedTime() {
         return receivedTime;
     }
@@ -17,12 +23,6 @@ public class EventRequestDto {
     public void setReceivedTime(Instant receivedTime) {
         this.receivedTime = receivedTime;
     }
-
-    private int defectCount;
-    private Instant receivedTime;
-
-    private String factoryId;
-    private String lineId;
 
     public String getEventId() {
         return eventId;
