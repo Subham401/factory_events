@@ -75,7 +75,7 @@ class EventIngestServiceTest {
     @Test
     @Transactional
     @Rollback
-    void olderEventIsIgnored() throws InterruptedException {
+    void olderEventIsIgnored() {
 
         EventRequestDto first = validEvent("E-3");
         ingestService.ingestBatch(List.of(first));
